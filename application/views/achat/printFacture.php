@@ -93,7 +93,6 @@
                        
                             <th>Prix</th>
                   
-                            <th>Fournisseur </th>
                             <th>Quantite </th>
                             <th>Total </th>
                         
@@ -112,7 +111,7 @@
                               
                                 <td><?php echo $article['prix'] ?></td>
                                 
-                                <td><?php echo $article['idFournisseur'] ?></td>
+                               
                                 <td><?php echo $article['quantite'] ?></td>
                                 <td><?php echo ($article['quantite']) * ($article['prix']) ?></td>
                                
@@ -134,7 +133,7 @@
                         </tr>
                         <tr>
                             <th>TVA (16%): </th>
-                            <td><?= $total * 0.16 ?>  $</td>
+                            <td><?= $total *(1- $discount/100) * 0.16 ?>  $</td>
                         </tr>
                         <tr>
                             <th>TOTAL:</th>

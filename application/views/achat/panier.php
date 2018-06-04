@@ -20,9 +20,12 @@
                         </div>
                         <div class="col-md-4 pull-right">
                                 <form class="form-inline" action="<?= site_url('achat/reduction')?>" method="post">
-                                    <label>Reduction(%)</label>
+                                     <label>Reduction(%)</label>
+                                    <span class="input-group-btn">
+                                   
                                     <input type="number" class="form-control" name="discount" value="<?=$discount?>"/>
                                     <input type="submit" class=" btn btn-default" value="Appliquer"/>
+                                    </span>
                                 </form>
                             </div>
                         <div class="col-md-4 text-center">
@@ -92,7 +95,7 @@
                         </tr>
                         <tr>
                             <th>TVA (16%): </th>
-                            <td><?= $total * 0.16 ?>  $</td>
+                            <td><?= $total *(1- $discount/100) * 0.16 ?>  $</td>
                         </tr>
                         <tr>
                             <th>TOTAL:</th>
